@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.propertyapp.presentation.ui.model.DrawerItemModel
 
@@ -49,7 +50,7 @@ fun AppDrawer(
 fun DrawerItem(
     title: String,
     selected: Boolean,
-    icon: ImageVector,
+    icon: Int,
     onClick: () -> Unit
 ) {
     NavigationDrawerItem(
@@ -58,7 +59,7 @@ fun DrawerItem(
         onClick = onClick,
         icon = {
             Icon(
-                imageVector = icon,
+                painter = painterResource(id = icon),
                 contentDescription = null
             )
         },

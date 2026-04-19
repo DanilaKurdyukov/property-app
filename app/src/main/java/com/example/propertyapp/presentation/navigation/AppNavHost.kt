@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.propertyapp.presentation.ui.model.DrawerItemModel
 import com.example.propertyapp.presentation.ui.view.ClientScreen
+import com.example.propertyapp.presentation.ui.view.DealScreen
 import com.example.propertyapp.presentation.ui.view.PropertyScreen
 
 @Composable
@@ -24,6 +25,9 @@ fun AppNavHost(
         }
         composable(DrawerItemModel.Clients.route) {
             ClientScreen()
+        }
+        composable(DrawerItemModel.Deals.route) {
+            DealScreen()
         }
     }
 }

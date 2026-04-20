@@ -31,5 +31,7 @@ data class PropertyDTO(
     @SerializedName(value = "typeId")
     val typeId: Int,
     @SerializedName(value = "statusId")
-    val statusId: Int
+    val statusId: Int,
+    @SerializedName(value = "photoUrl")
+    val photoUrl: String
 )

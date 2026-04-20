@@ -31,7 +31,7 @@ fun PropertyCardItem(property: PropertyUI) {
             containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
-            defaultElevation = 3.dp
+            defaultElevation = 10.dp
         )
     ) {
         ConstraintLayout(
@@ -46,7 +46,7 @@ fun PropertyCardItem(property: PropertyUI) {
 
                     end.linkTo(anchor = parent.end)
                 }.fillMaxWidth().height(100.dp).padding(all = 0.dp),
-                model = R.drawable.ofis,
+                model = property.photoUrl,
                 contentDescription = "News image",
                 contentScale = ContentScale.Crop
 

@@ -12,5 +12,8 @@ data class Property(
     val description: String,
     val price: Double,
     val typeId: Int,
-    val statusId: Int
+    val statusId: Int,
+    val status: String,
+    val type: String,
+    val photoUrl: String
 )

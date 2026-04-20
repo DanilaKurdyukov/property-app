@@ -10,5 +10,8 @@ fun Property.toUI(): PropertyUI =
         district = district,
         characteristics = "$area м² · $roomsCount · $floor",
         description = description,
-        price = price
+        price = price,
+        status = status,
+        type = type,
+        photoUrl = photoUrl
     )

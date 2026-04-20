@@ -16,5 +16,8 @@ fun PropertyDTO.toDomain(): Property =
         description = description,
         price = price,
         typeId = typeId,
-        statusId = statusId
+        statusId = statusId,
+        status = status,
+        type = type,
+        photoUrl = photoUrl
     )

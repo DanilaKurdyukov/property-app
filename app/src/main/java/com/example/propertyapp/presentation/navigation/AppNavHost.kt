@@ -21,7 +21,9 @@ fun AppNavHost(
         modifier = modifier
     ) {
         composable(DrawerItemModel.Property.route) {
-            PropertyScreen()
+            PropertyScreen(
+                modifier = Modifier
+            )
         }
         composable(DrawerItemModel.Clients.route) {
             ClientScreen()

@@ -7,18 +7,29 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import coil3.compose.AsyncImage
 import com.example.propertyapp.presentation.ui.model.PropertyUI
+import com.example.propertyapp.presentation.ui.theme.StatusAvailable
+import com.example.propertyapp.presentation.ui.theme.StatusRented
+import com.example.propertyapp.presentation.ui.theme.StatusUnavailable
 
 @Composable
 fun PropertyCardItem(property: PropertyUI) {
@@ -38,7 +49,7 @@ fun PropertyCardItem(property: PropertyUI) {
             modifier = Modifier
                 .fillMaxWidth()
         ) {
-            val (txtPrice, txtAddress, txtDistrict, txtCharacteristics, txtDescription, imgPropertyImage) = createRefs()
+            val (txtPrice, txtAddress, txtDistrict, txtCharacteristics, txtDescription, imgPropertyImage, btnForward, btnFavorite, txtStatus, imgStatus) = createRefs()
 
             AsyncImage(
                 modifier = Modifier.constrainAs(imgPropertyImage) {
@@ -54,15 +65,15 @@ fun PropertyCardItem(property: PropertyUI) {
 
             Text(
                 modifier = Modifier.constrainAs(ref = txtPrice) {
-                    bottom.linkTo(anchor = imgPropertyImage.bottom)
+                    top.linkTo(anchor = imgPropertyImage.bottom)
                     start.linkTo(anchor = imgPropertyImage.start)
                 }.padding(bottom = 5.dp, start = 10.dp, end = 10.dp),
-                text = property.price.toString()
+                text = "${property.price.toString().substring(startIndex = 0, endIndex = property.price.toString().indexOf('.'))} ₽"
             )
 
             Text(
                 modifier = Modifier.constrainAs(ref = txtAddress) {
-                    top.linkTo(anchor = imgPropertyImage.bottom)
+                    top.linkTo(anchor = txtPrice.bottom)
                     start.linkTo(anchor = parent.start)
                 }.padding(bottom = 5.dp, start = 10.dp, end = 10.dp),
                 text = property.address
@@ -73,7 +84,7 @@ fun PropertyCardItem(property: PropertyUI) {
                     top.linkTo(anchor = txtAddress.bottom)
                     start.linkTo(anchor = parent.start)
                 }.padding(bottom = 5.dp, start = 10.dp, end = 10.dp),
-                text = property.district
+                text = "${property.district} район"
             )
 
             Text(
@@ -93,6 +104,56 @@ fun PropertyCardItem(property: PropertyUI) {
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
+
+            IconButton(
+                modifier = Modifier.constrainAs(ref = btnForward) {
+                    top.linkTo(anchor = imgPropertyImage.bottom)
+                    end.linkTo(anchor = parent.end)
+                },
+                onClick = {}
+            ) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Default.ArrowForward,
+                    contentDescription = null
+                )
+            }
+            /*IconButton(
+                modifier = Modifier.constrainAs(ref = btnFavorite) {
+                    top.linkTo(anchor = parent.top)
+                    end.linkTo(anchor = parent.end)
+                },
+                onClick = {}
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Favorite,
+                    contentDescription =  null,
+                )
+            }*/
+
+            Text(
+                modifier = Modifier.constrainAs(ref = txtStatus) {
+                    top.linkTo(anchor = txtDescription.bottom)
+                    start.linkTo(anchor = parent.start)
+                }.padding(bottom = 5.dp, start = 10.dp, end = 10.dp),
+                text = property.status
+            )
+
+            val statusColor  = when(property.status) {
+                "Сдается" -> StatusAvailable
+                "В аренде" -> StatusRented
+                "Временно недоступно" -> StatusUnavailable
+                else -> MaterialTheme.colorScheme.onSurface
+            }
+            Icon(
+                modifier = Modifier.constrainAs(ref = imgStatus) {
+                    top.linkTo(anchor = txtDescription.bottom)
+                    start.linkTo(anchor = txtStatus.end)
+                },
+                painter = painterResource(R.drawable.baseline_circle_24),
+                contentDescription = null,
+                tint = statusColor
+            )
+
         }
     }
 }

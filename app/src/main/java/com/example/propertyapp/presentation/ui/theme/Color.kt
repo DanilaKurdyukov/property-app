@@ -3,25 +3,26 @@ package com.example.propertyapp.presentation.ui.theme
 import androidx.compose.ui.graphics.Color
 
 // ---------------- DARK THEME ----------------
-val PrimaryDark = Color(0xFFD6A85F)          // тёплый янтарный акцент
-val OnPrimaryDark = Color(0xFF2A1B05)
 
-val SecondaryDark = Color(0xFF8FA68E)        // мягкий шалфейный
-val OnSecondaryDark = Color(0xFF102013)
+val PrimaryDark = Color(0xFFC6925B)        // тёплый бронзовый акцент
+val OnPrimaryDark = Color(0xFF22150A)
 
-val TertiaryDark = Color(0xFFE0C38C)         // светлый песочный
-val OnTertiaryDark = Color(0xFF2B2110)
+val SecondaryDark = Color(0xFF7E9380)      // приглушённый оливковый
+val OnSecondaryDark = Color(0xFF0F1A10)
 
-val BackgroundDark = Color(0xFF000000)      // чистый чёрный
-val OnBackgroundDark = Color(0xFFEDEDED)
+val TertiaryDark = Color(0xFFBFA37A)       // песочный акцент
+val OnTertiaryDark = Color(0xFF241B10)
 
-val SurfaceDark = Color(0xFF1B1F22)          // top bar / drawer
-val OnSurfaceDark = Color(0xFFF5F1EB)
+val BackgroundDark = Color(0xFF1A1613)     // тёмный тёплый графит
+val OnBackgroundDark = Color(0xFFF0EAE4)
 
-val SurfaceVariantDark = Color(0xFF2A2F34)   // карточки
-val OnSurfaceVariantDark = Color(0xFFD4CDC3)
+val SurfaceDark = Color(0xFF26211D)        // top bar / drawer
+val OnSurfaceDark = Color(0xFFF7F2EC)
 
-val OutlineDark = Color(0xFF4B535A)          // границы/разделители
+val SurfaceVariantDark = Color(0xFF332C27) // карточки
+val OnSurfaceVariantDark = Color(0xFFD9CEC2)
+
+val OutlineDark = Color(0xFF4A413A)        // границы
 
 // ---------------- LIGHT THEME ----------------
 val PrimaryLight = Color(0xFF1565C0)
@@ -43,3 +44,9 @@ val SurfaceVariantLight = Color(0xFFE8EEF5)
 val OnSurfaceVariantLight = Color(0xFF556070)
 
 val OutlineLight = Color(0xFFD2DAE5)
+
+//STATUS
+
+val StatusAvailable = Color(0xFF81C784)     // мягкий зелёный
+val StatusRented = Color(0xFF90A4AE)        // серо-синий
+val StatusUnavailable = Color(0xFFFFB74D)   // мягкий оранжевый

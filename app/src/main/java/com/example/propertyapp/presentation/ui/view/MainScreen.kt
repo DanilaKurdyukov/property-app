@@ -1,5 +1,6 @@
 package com.example.propertyapp.presentation.ui.view
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -82,12 +83,17 @@ fun MainScreen(modifier: Modifier) {
                 )
             }
         ) { paddingValues ->
-            AppNavHost(
-                navController = navController,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(paddingValues = paddingValues)
-            )
+            Column(
+                modifier = Modifier.padding(paddingValues = paddingValues)
+            ) {
+                FilterRow()
+                AppNavHost(
+                    navController = navController,
+                    modifier = Modifier
+                        .fillMaxSize()
+                )
+            }
+
         }
     }
 }

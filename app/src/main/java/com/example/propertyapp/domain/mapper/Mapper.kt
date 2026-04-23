@@ -13,5 +13,6 @@ fun Property.toUI(): PropertyUI =
         price = price,
         status = status,
         type = type,
-        photoUrl = photoUrl
+        photoUrl = photoUrl,
+        roomsCount = roomsCount
     )

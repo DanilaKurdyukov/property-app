@@ -9,5 +9,6 @@ data class PropertyUI(
     val price: Double,
     val status: String,
     val type: String,
-    val photoUrl: String
+    val photoUrl: String,
+    val roomsCount: Int
 )

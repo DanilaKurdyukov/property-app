@@ -24,6 +24,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.propertyapp.presentation.navigation.AppNavHost
 import com.example.propertyapp.presentation.ui.model.DrawerItemModel
+import com.example.propertyapp.presentation.ui.view.filter.status.FilterRow
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -86,7 +87,6 @@ fun MainScreen(modifier: Modifier) {
             Column(
                 modifier = Modifier.padding(paddingValues = paddingValues)
             ) {
-                FilterRow()
                 AppNavHost(
                     navController = navController,
                     modifier = Modifier

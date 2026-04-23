@@ -6,9 +6,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.propertyapp.presentation.ui.model.DrawerItemModel
-import com.example.propertyapp.presentation.ui.view.ClientScreen
 import com.example.propertyapp.presentation.ui.view.DealScreen
-import com.example.propertyapp.presentation.ui.view.PropertyScreen
+import com.example.propertyapp.presentation.ui.view.client.ClientScreen
+import com.example.propertyapp.presentation.ui.view.property.PropertyScreen
 
 @Composable
 fun AppNavHost(
